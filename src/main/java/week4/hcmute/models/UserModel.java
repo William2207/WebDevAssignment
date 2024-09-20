@@ -11,7 +11,6 @@ public class UserModel implements Serializable{
 	private static final long serialVersionUID = -8882752016861358658L;
 	//Khai bao cac thuoc tinh trong DB
 	
-	
 	private int id;
 	private String username;
 	private String email;
@@ -25,6 +24,29 @@ public class UserModel implements Serializable{
 	public UserModel() {
 		super();
 	}
+	
+	public UserModel(String username, String email, String password, String fullname, String phone) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.fullname = fullname;
+		this.phone = phone;
+	}
+	public UserModel(String username, String email, String password, String fullname, String images, int roleid,
+			String phone, Date createdate) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.fullname = fullname;
+		this.images = images;
+		this.roleid = roleid;
+		this.phone = phone;
+		this.createdate = createdate;
+	}
+	
+	
 	//Create getters and setters
 	public int getId() {
 		return id;

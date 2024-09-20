@@ -18,16 +18,41 @@ public class UserServiceImpl implements IUserService {
 	public UserModel login(String username, String password) {
 		// TODO Auto-generated method stub
 		UserModel user = this.findByUserName(username);
-		if(user!=null && password.equals(user.getPassword())) {
+		if (user != null && password.equals(user.getPassword())) {
 			return user;
 		}
 		return null;
 	}
+
+	@Override
+	public boolean register(String username, String password, String email, String fullname, String phone) {
+		if (userDao.checkExistUsername(username)) {
+			return false;
+		}
+		long millis = System.currentTimeMillis();
+		java.sql.Date date = new java.sql.Date(millis);
+		userDao.insert(new UserModel(username, email, password, fullname, null, 1, phone, date));
+		return true;
+	}
+
+	public boolean checkExistEmail(String email) {
+		return userDao.checkExistEmail(email);
+	}
+
+	public boolean checkExistUsername(String username) {
+		return userDao.checkExistUsername(username);
+	}
+
+	@Override
+	public void insert(UserModel user) {
+		userDao.insert(user);
+	}
+
 	public static void main(String[] args) {
 
 		try {
 			IUserService userService = new UserServiceImpl();
-			System.out.println(userService.login("hongphuc","123"));
+			System.out.println(userService.login("hongphuc", "123"));
 
 		} catch (Exception e) {
 
@@ -35,6 +60,5 @@ public class UserServiceImpl implements IUserService {
 
 		}
 	}
-	
-	
+
 }

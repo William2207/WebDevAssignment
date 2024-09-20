@@ -29,4 +29,34 @@
     <servlet-name>WaitingControllers</servlet-name>
     <url-pattern>/WaitingControllers</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Logincontrololers</display-name>
+    <servlet-name>Logincontrololers</servlet-name>
+    <servlet-class>week4.hcmute.controllers.Logincontrololers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logincontrololers</servlet-name>
+    <url-pattern>/Logincontrololers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginControllers</display-name>
+    <servlet-name>LoginControllers</servlet-name>
+    <servlet-class>week4.hcmute.controllers.LoginControllers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginControllers</servlet-name>
+    <url-pattern>/LoginControllers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterController</display-name>
+    <servlet-name>RegisterController</servlet-name>
+    <servlet-class>week4.hcmute.controllers.RegisterController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterController</servlet-name>
+    <url-pattern>/RegisterController</url-pattern>
+  </servlet-mapping>
 </web-app>

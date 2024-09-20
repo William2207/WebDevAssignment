@@ -84,7 +84,7 @@ span.psw {
 	<c:if test="${alert !=null}">
 	<h3 class="alert alertdanger">${alert}</h3>
 	</c:if>
-	<form action="action_page.php" method="post">
+	<form action="login" method="post">
 		<div class="imgcontainer">
 			<img src="img_avatar2.png" alt="Avatar" class="avatar">
 		</div>
@@ -96,6 +96,7 @@ span.psw {
 				placeholder="Enter Password" name="password" required>
 
 			<button type="submit">Login</button>
+			
 			<label> <input type="checkbox" checked="checked"
 				name="remember"> Remember me
 			</label>
