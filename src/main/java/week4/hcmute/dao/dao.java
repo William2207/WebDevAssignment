@@ -8,4 +8,5 @@ public interface dao {
 	void insert(UserModel user);
 	boolean checkExistEmail(String email);
 	boolean checkExistUsername(String username);
+	void update(UserModel user);
 }

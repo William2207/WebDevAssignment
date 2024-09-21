@@ -1,24 +1,27 @@
 package week4.hcmute.dao.impl;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import week4.hcmute.configs.DBConnectSQLServer;
 import week4.hcmute.dao.dao;
 import week4.hcmute.models.UserModel;
 
-public class UserDaoImpl implements dao{
+public class UserDaoImpl implements dao {
 
 	public Connection conn = null;
 	public PreparedStatement ps = null;
 	public ResultSet rs = null;
+
 	@Override
 	public UserModel findByUserName(String username) {
 		String sql = "select * from users where username=?";
 		try {
-			Connection conn = new DBConnectSQLServer().getConnection();
+			conn = new DBConnectSQLServer().getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, username); //truyen tham so
+			ps.setString(1, username); // truyen tham so
 			ResultSet rs = ps.executeQuery(); // thuc thi phat bieu prepare roi dua kq vao resultset
 			while (rs.next()) {
 				UserModel user = new UserModel();
@@ -31,16 +34,17 @@ public class UserDaoImpl implements dao{
 				user.setPhone(rs.getString("phone"));
 				user.setRoleid(rs.getInt("roleid"));
 				user.setCreatedate(rs.getDate("createdate"));
-				
+
 				return user;
 			}
-		} catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		return null;
 	}
+
+	// insert
 	public void insert(UserModel user) {
 		String sql = "INSERT INTO [users](email, username, fullname, password, images, roleid,phone, createdate) VALUES (?,?,?,?,?,?,?,?)";
 		try {
@@ -56,6 +60,21 @@ public class UserDaoImpl implements dao{
 			ps.setDate(8, user.getCreatedate());
 			ps.executeUpdate();
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	// update
+	public void update(UserModel user) {
+		String sql = "UPDATE [dbo].[users]\r\n" + "   SET [password] = ?\r\n" + " WHERE email=?";
+		try {
+			conn = new DBConnectSQLServer().getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, user.getPassword());
+			ps.setString(2, user.getEmail());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			
 			e.printStackTrace();
 		}
 	}

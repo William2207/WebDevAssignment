@@ -78,7 +78,7 @@ a {
 			<hr>
 
 			<label for="Username"><b>Username</b></label> <input type="text"
-				placeholder="Enter Username" name="username" id="email" required>
+				placeholder="Enter Username" name="username" id="username" required>
 			
 			<label for="Fullname"><b>Fullname</b></label>
 			<input type="text" placeholder="Enter Fullname" name="fullname"
@@ -104,7 +104,7 @@ a {
 
 		<div class="container signin">
 			<p>
-				Already have an account? <a href="#">Sign in</a>.
+				Already have an account? <a href="${pageContext.request.contextPath }/login">Sign in</a>.
 			</p>
 		</div>
 	</form>

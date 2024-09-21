@@ -46,6 +46,11 @@ public class UserModel implements Serializable{
 		this.createdate = createdate;
 	}
 	
+	public UserModel(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
 	
 	//Create getters and setters
 	public int getId() {

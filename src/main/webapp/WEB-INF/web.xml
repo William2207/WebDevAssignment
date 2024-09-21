@@ -59,4 +59,24 @@
     <servlet-name>RegisterController</servlet-name>
     <url-pattern>/RegisterController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutControllers</display-name>
+    <servlet-name>LogoutControllers</servlet-name>
+    <servlet-class>week4.hcmute.controllers.LogoutControllers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutControllers</servlet-name>
+    <url-pattern>/LogoutControllers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ForgotPassword</display-name>
+    <servlet-name>ForgotPassword</servlet-name>
+    <servlet-class>week4.hcmute.controllers.ForgotPassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForgotPassword</servlet-name>
+    <url-pattern>/ForgotPassword</url-pattern>
+  </servlet-mapping>
 </web-app>
