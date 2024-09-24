@@ -42,7 +42,6 @@ public class RegisterController extends HttpServlet {
 		}
 		request.getRequestDispatcher("/view/Register.jsp").forward(request, response);
 	}
-
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String username = req.getParameter("username");
@@ -69,7 +68,6 @@ public class RegisterController extends HttpServlet {
 		boolean isSuccess = service.register(username, password, email, fullname, phone);
 		if (isSuccess) {
 			alertMsg = "Đăng kí tài khoản thành công";
-		
 			req.setAttribute("alert", alertMsg);
 			resp.sendRedirect(req.getContextPath() + "/login");
 		} else {

@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
-  <servlet>
-    <description></description>
-    <display-name>HelloControllers</display-name>
-    <servlet-name>HelloControllers</servlet-name>
-    <servlet-class>week4.hcmute.controllers.HelloControllers</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>HelloControllers</servlet-name>
-    <url-pattern>/hellocontrollers</url-pattern>
-  </servlet-mapping>
+
   <display-name>week4</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -19,64 +10,15 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>WaitingControllers</display-name>
-    <servlet-name>WaitingControllers</servlet-name>
-    <servlet-class>week4.hcmute.controllers.WaitingControllers</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>WaitingControllers</servlet-name>
-    <url-pattern>/WaitingControllers</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Logincontrololers</display-name>
-    <servlet-name>Logincontrololers</servlet-name>
-    <servlet-class>week4.hcmute.controllers.Logincontrololers</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Logincontrololers</servlet-name>
-    <url-pattern>/Logincontrololers</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>LoginControllers</display-name>
-    <servlet-name>LoginControllers</servlet-name>
-    <servlet-class>week4.hcmute.controllers.LoginControllers</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LoginControllers</servlet-name>
-    <url-pattern>/LoginControllers</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>RegisterController</display-name>
-    <servlet-name>RegisterController</servlet-name>
-    <servlet-class>week4.hcmute.controllers.RegisterController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>RegisterController</servlet-name>
-    <url-pattern>/RegisterController</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>LogoutControllers</display-name>
-    <servlet-name>LogoutControllers</servlet-name>
-    <servlet-class>week4.hcmute.controllers.LogoutControllers</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LogoutControllers</servlet-name>
-    <url-pattern>/LogoutControllers</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ForgotPassword</display-name>
-    <servlet-name>ForgotPassword</servlet-name>
-    <servlet-class>week4.hcmute.controllers.ForgotPassword</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ForgotPassword</servlet-name>
-    <url-pattern>/ForgotPassword</url-pattern>
-  </servlet-mapping>
+  
+   <filter>
+    <filter-name>sitemesh</filter-name>
+    <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>sitemesh</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <session-config> <tracking-mode>COOKIE</tracking-mode></session-config>
 </web-app>

@@ -30,7 +30,7 @@ public class LogoutControllers extends HttpServlet {
 		}
 		HttpSession session = request.getSession();
 		session.invalidate();
-		request.getRequestDispatcher("/view/admin/home.jsp").forward(request, response);
+		request.getRequestDispatcher("/view/home.jsp").forward(request, response);
 
 	}
 

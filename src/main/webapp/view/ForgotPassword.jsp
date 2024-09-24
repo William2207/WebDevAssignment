@@ -77,12 +77,12 @@ a {
 			<hr>
 
 			<label for="Email"><b>Email</b></label> <input type="text"
-				placeholder="Enter Email" name="email" required>   
-			<label for="psw"><b>Password</b></label>
-			<input type="password" placeholder="Enter Password" name="password"
-				id="password" required> <label for="psw-repeat"><b>Repeat
-					Password</b></label> <input type="password" placeholder="Repeat Password"
-				name="psw-repeat" id="psw-repeat" required> 
+				placeholder="Enter Email" name="email" required> <label
+				for="psw"><b>Password</b></label> <input type="password"
+				placeholder="Enter Password" name="password" id="password" required>
+			<label for="psw-repeat"><b>Repeat Password</b></label> <input
+				type="password" placeholder="Repeat Password" name="psw-repeat"
+				id="psw-repeat" required>
 			<hr>
 
 

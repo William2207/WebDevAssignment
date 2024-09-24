@@ -24,11 +24,11 @@ public class WaitingControllers extends HttpServlet {
 		if (session != null && session.getAttribute("account") != null) {
 			UserModel u = (UserModel) session.getAttribute("account");
 			request.setAttribute("username", u.getUsername());
-			if (u.getRoleid() == 1) {
+			if (u.getRoleid() == 2) {
 				response.sendRedirect(request.getContextPath() + "/admin/home");
 
-			} else if (u.getRoleid() == 2) {
-				response.sendRedirect(request.getContextPath() + "/manager/home");
+			} else if (u.getRoleid() == 1) {
+				response.sendRedirect(request.getContextPath() + "/home");
 
 			} else {
 				response.sendRedirect(request.getContextPath() + "/home");
