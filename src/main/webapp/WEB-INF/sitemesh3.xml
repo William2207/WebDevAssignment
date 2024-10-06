@@ -6,5 +6,4 @@
 	<mapping path="/admin/*" decorator="admin.jsp" />
 	<mapping path="/v1/api/*" exclude ="true" />
 
-
 </sitemesh>
